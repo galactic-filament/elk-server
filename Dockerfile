@@ -9,7 +9,8 @@ ENV KIBANA_MAJOR 4.1.1
 
 RUN echo "deb http://packages.elasticsearch.org/elasticsearch/${ELASTICSEARCH_VERSION%.*}/debian stable main" > /etc/apt/sources.list.d/elasticsearch.list
 RUN echo "deb http://packages.elasticsearch.org/logstash/${LOGSTASH_MAJOR}/debian stable main" > /etc/apt/sources.list.d/logstash.list
-RUN apt-get update && apt-get install -y supervisor elasticsearch=$ELASTICSEARCH_VERSION logstash=$LOGSTASH_VERSION
+RUN apt-get update && apt-get install -y supervisor \
+    elasticsearch=$ELASTICSEARCH_VERSION logstash=$LOGSTASH_VERSION
 
 RUN wget -P /tmp https://download.elastic.co/kibana/kibana/kibana-${KIBANA_MAJOR}-linux-x64.tar.gz && \
   mkdir /srv/kibana && \
