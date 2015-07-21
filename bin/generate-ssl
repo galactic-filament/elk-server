@@ -1,0 +1,3 @@
+#! /bin/bash
+
+openssl req -x509 -subj '/CN=*.example.org/' -nodes -newkey rsa:2048 -keyout logstash-forwarder.key -out logstash-forwarder.crt

@@ -1,0 +1,3 @@
+#! /bin/bash
+
+docker start $(docker create --name elk-server -p 8080:5601 ihsw/elk-server)
