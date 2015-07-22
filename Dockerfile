@@ -39,6 +39,8 @@ RUN mkdir -p /etc/pki/tls/certs
 COPY $FILES_DIR/etc/pki/tls/certs/logstash-forwarder.crt /etc/pki/tls/certs/logstash-forwarder.crt
 RUN mkdir /etc/pki/tls/private
 COPY $FILES_DIR/etc/pki/tls/private/logstash-forwarder.key /etc/pki/tls/private/logstash-forwarder.key
+RUN mkdir -p /opt/logstash
+COPY $FILES_DIR/opt/logstash/patterns /opt/logstash/patterns
 
 ### SUPPORTIVE SERVICES ###
 # supervisor setup
