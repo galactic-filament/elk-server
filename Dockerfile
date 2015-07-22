@@ -29,8 +29,9 @@ ENV PATH /opt/logstash/bin:$PATH
 ENV PATH /usr/share/elasticsearch/bin:$PATH
 ENV PATH /srv/kibana/bin:$PATH
 
-# elasticsearch data
+# elasticsearch setup
 VOLUME /usr/share/elasticsearch/data
+RUN ln -s /etc/elasticsearch /usr/share/elasticsearch/config
 
 # logstash config
 COPY $FILES_DIR/etc/logstash/conf.d /etc/logstash/conf.d
