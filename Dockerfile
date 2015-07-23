@@ -34,6 +34,7 @@ VOLUME /usr/share/elasticsearch/data
 RUN ln -s /etc/elasticsearch /usr/share/elasticsearch/config
 
 # logstash config
+# see bin/generate-ssl for the command to generate an ssl certificate and key
 COPY $FILES_DIR/etc/logstash/conf.d /etc/logstash/conf.d
 RUN mkdir -p /etc/pki/tls/certs
 COPY $FILES_DIR/etc/pki/tls/certs/logstash-forwarder.crt /etc/pki/tls/certs/logstash-forwarder.crt
@@ -43,9 +44,6 @@ RUN mkdir -p /opt/logstash
 COPY $FILES_DIR/opt/logstash/patterns /opt/logstash/patterns
 
 ### SUPPORTIVE SERVICES ###
-# supervisor setup
-COPY $FILES_DIR/etc/supervisor/conf.d /etc/supervisor/conf.d
-
 # supervisor setup
 COPY $FILES_DIR/etc/supervisor/conf.d /etc/supervisor/conf.d
 
