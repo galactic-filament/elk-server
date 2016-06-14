@@ -26,7 +26,7 @@ RUN wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | apt-key add -
 ### INSTALLATION ###
 RUN apt-get update -q \
   && apt-get install -yq elasticsearch logstash kibana filebeat supervisor \
-  && logstash-plugin install logstash-input-beats
+  && /opt/logstash/bin/logstash-plugin install logstash-input-beats
 
 # path resolution
 ENV PATH /usr/share/elasticsearch/bin:$PATH
