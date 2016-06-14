@@ -40,16 +40,6 @@ ENV PATH /opt/kibana/bin:$PATH
 # ...but elasticsearch looks for it in /usr/share/elasticsearch/config
 RUN ln -s /etc/elasticsearch /usr/share/elasticsearch/config
 
-# # logstash config -- TODO
-# # see bin/generate-ssl for the command to generate an ssl certificate and key
-# COPY $FILES_DIR/etc/logstash/conf.d /etc/logstash/conf.d
-# RUN mkdir -p /etc/pki/tls/certs
-# COPY $FILES_DIR/etc/pki/tls/certs/logstash-forwarder.crt /etc/pki/tls/certs/logstash-forwarder.crt
-# RUN mkdir /etc/pki/tls/private
-# COPY $FILES_DIR/etc/pki/tls/private/logstash-forwarder.key /etc/pki/tls/private/logstash-forwarder.key
-# RUN mkdir -p /opt/logstash
-# COPY $FILES_DIR/opt/logstash/patterns /opt/logstash/patterns
-
 # etc config
 COPY ./container/files/ /
 
