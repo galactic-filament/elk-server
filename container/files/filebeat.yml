@@ -1,0 +1,10 @@
+filebeat:
+  prospectors:
+  -
+    paths:
+    - /var/log/lmao.log
+output:
+  console:
+    pretty: true
+  logstash:
+    hosts: ["127.0.0.1:5044"]
