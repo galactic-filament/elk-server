@@ -1,3 +1,3 @@
-#! /usr/bin/bash
+#! /bin/bash
 
 curl -s "localhost:9200/logstash-*/_search?query=*.*&pretty=1"
