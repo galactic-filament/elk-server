@@ -1,3 +1,8 @@
 #! /bin/bash
 
-docker start $(docker create --name elk-server -p 80:5601 ihsw/elk-server)
+CONTAINER_ID=$(docker create \
+    --name elk-server \
+    -p 80:5601 \
+    -p 8080:8080 \
+    ihsw/elk-server)
+docker start $CONTAINER_ID

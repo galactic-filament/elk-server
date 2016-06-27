@@ -8,7 +8,8 @@ ENV KIBANA_MAJOR 4.5
 # 9200/9300 are elasticsearch API ports
 # 5044 is logstash beats ingress
 # 5601 is kibana frontend
-EXPOSE 9200 9300 5044 5601
+# 8080 is logstash http ingress
+EXPOSE 9200 9300 5044 5601 8080
 
 VOLUME /usr/share/elasticsearch/data
 
